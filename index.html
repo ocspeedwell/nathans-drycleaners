@@ -1,1 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Nathans Dry Cleaners | Professional Garment Care</title>
+
+    <meta name="description" content="Nathans Dry Cleaners provides professional dry cleaning, laundry, garment care, pressing and pickup services.">
+    <meta name="keywords" content="Nathans Dry Cleaners, dry cleaning Nigeria, laundry Nigeria, garment care, pickup and delivery">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #182033;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* TOP BAR */
+
+        .top-bar {
+            background: #071b3a;
+            color: white;
+            padding: 9px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* HEADER */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .navbar {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #0c4da2;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo-text {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #071b3a;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 11px;
+            color: #0c4da2;
+            letter-spacing: 3px;
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0c4da2;
+        }
+
+        .nav-button {
+            background: #0c4da2;
+            color: white !important;
+            padding: 13px 20px;
+            border-radius: 5px;
+        }
+
+        .nav-button:hover {
+            background: #071b3a;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            background:
+                linear-gradient(90deg, rgba(5,20,45,0.95), rgba(5,20,45,0.70), rgba(5,20,45,0.20)),
+                linear-gradient(135deg, #0c4da2, #071b3a);
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-label {
+            color: #8fc9ff;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #8fc9ff;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 620px;
+            color: #e4ebf5;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #071b3a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.7);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #071b3a;
+        }
+
+        /* STATS */
+
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .stat {
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid #e9edf3;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: #0c4da2;
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        .stat p {
+            font-size: 13px;
+            color: #667085;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: #0c4da2;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            color: #071b3a;
+        }
+
+        .section-heading p {
+            color: #667085;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 470px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #dcecff, #8fc9ff, #0c4da2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .about-image-content h3 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            color: #071b3a;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #667085;
+            margin-bottom: 18px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .check-list li {
+            margin-bottom: 13px;
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: #0c4da2;
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #f6f9fc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid #e7edf4;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            background: #e8f2ff;
+            color: #0c4da2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 25px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            color: #071b3a;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .service-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* WHY US */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 30px;
+            border-left: 4px solid #0c4da2;
+            background: #f8fafc;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+            color: #071b3a;
+        }
+
+        .why-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CORPORATE */
+
+        .corporate {
+            background: #071b3a;
+            color: white;
+        }
+
+        .corporate-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .corporate h2 {
+            font-size: 43px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .corporate p {
+            color: #c9d3e1;
+            margin-bottom: 25px;
+        }
+
+        .corporate-list {
+            list-style: none;
+        }
+
+        .corporate-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .corporate-box {
+            padding: 45px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .corporate-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        /* LOCATIONS */
+
+        .locations {
+            text-align: center;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
+
+        .location-card {
+            padding: 35px 20px;
+            border: 1px solid #e3e9f0;
+            border-radius: 8px;
+        }
+
+        .location-card h3 {
+            color: #071b3a;
+            margin-bottom: 8px;
+        }
+
+        .location-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #eaf4ff;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 44px;
+            color: #071b3a;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #667085;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050f20;
+            color: white;
+            padding: 65px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        footer h3 {
+            margin-bottom: 18px;
+        }
+
+        footer p,
+        footer li {
+            color: #aeb9c8;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #8290a3;
+            font-size: 13px;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            z-index: 2000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .top-bar-content {
+                justify-content: center;
+            }
+
+            .top-bar-content span:first-child {
+                display: none;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat {
+                border-bottom: 1px solid #e9edf3;
+            }
+
+            .about-grid,
+            .corporate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-grid,
+            .why-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2,
+            .about-text h2,
+            .corporate h2,
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>Professional Garment Care You Can Trust</span>
+            <span>Pickup & Delivery Available</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+
+            <a href="#" class="logo">
+                <div class="logo-mark">N</div>
+
+                <div class="logo-text">
+                    NATHANS
+                    <span>DRY CLEANERS</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-button">Book a Pickup</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    Nathans Dry Cleaners
+                </div>
+
+                <h1>
+                    We Care For Your Clothes Like <span>You Do.</span>
+                </h1>
+
+                <p>
+                    Professional dry cleaning, laundry and garment care
+                    delivered with quality, convenience and attention to detail.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        Book a Pickup
+                    </a>
+
+                    <a href="#services" class="btn btn-outline">
+                        Explore Services
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h3>01</h3>
+                    <p>Trusted Brand</p>
+                </div>
+
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Customer Convenience</p>
+                </div>
+
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Quality Focused</p>
+                </div>
+
+                <div class="stat">
+                    <h3>∞</h3>
+                    <p>Commitment to Excellence</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="container about-grid">
+
+            <div class="about-image">
+
+                <div class="about-image-content">
+                    <h3>NATHANS</h3>
+                    <p>
+                        Professional garment care built around
+                        quality, trust and convenience.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    About Nathans
+                </div>
+
+                <h2>
+                    More Than Cleaning. We Care.
+                </h2>
+
+                <p>
+                    At Nathans Dry Cleaners, we understand that your clothes
+                    are more than fabric. They are part of how you present
+                    yourself to the world.
+                </p>
+
+                <p>
+                    Our goal is simple: provide dependable garment care that
+                    keeps your clothes looking fresh, clean and professionally
+                    finished.
+                </p>
+
+                <ul class="check-list">
+                    <li>Professional garment care</li>
+                    <li>Quality-focused cleaning processes</li>
+                    <li>Convenient pickup and delivery</li>
+                    <li>Reliable service for individuals and businesses</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-label">
+                    Our Services
+                </div>
+
+                <h2>
+                    Complete Garment Care
+                </h2>
+
+                <p>
+                    From everyday clothing to special garments, Nathans
+                    provides professional care designed around your needs.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>Dry Cleaning</h3>
+                    <p>
+                        Professional cleaning for suits, dresses, jackets,
+                        delicate fabrics and special garments.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◈</div>
+                    <h3>Laundry</h3>
+                    <p>
+                        Reliable washing and finishing for your everyday
+                        clothing and household fabrics.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✓</div>
+                    <h3>Pressing</h3>
+                    <p>
+                        Crisp, professionally finished garments ready for
+                        work, events and everyday life.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◇</div>
+                    <h3>Pickup & Delivery</h3>
+                    <p>
+                        Enjoy convenient garment collection and delivery
+                        without leaving your home or office.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">▣</div>
+                    <h3>Household Items</h3>
+                    <p>
+                        Professional care for curtains, bedding and other
+                        household fabrics.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◆</div>
+                    <h3>Corporate Laundry</h3>
+                    <p>
+                        Reliable garment and linen care solutions for
+                        businesses, hotels and organisations.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY NATHANS -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-label">
+                    Why Nathans
+                </div>
+
+                <h2>
+                    Service Built Around You
+                </h2>
+
+                <p>
+                    We combine professional processes with the convenience
+                    modern customers expect.
+                </p>
+            </div>
+
+            <div class="why-grid">
+
+                <div class="why-card">
+                    <h3>Quality First</h3>
+                    <p>
+                        Every garment receives careful attention throughout
+                        the cleaning and finishing process.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Convenience</h3>
+                    <p>
+                        Pickup and delivery services make professional
+                        garment care easier and more accessible.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Professional Care</h3>
+                    <p>
+                        Our services are designed to protect the appearance
+                        and longevity of your garments.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Reliability</h3>
+                    <p>
+                        Customers and businesses can depend on Nathans for
+                        consistent service.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Customer Focus</h3>
+                    <p>
+                        We believe excellent service starts by understanding
+                        what customers actually need.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Growing Network</h3>
+                    <p>
+                        Nathans is building a wider network of professional
+                        garment care services.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CORPORATE -->
+    <section class="corporate">
+
+        <div class="container corporate-grid">
+
+            <div>
+
+                <div class="section-label" style="color:#8fc9ff;">
+                    Corporate Services
+                </div>
+
+                <h2>
+                    Reliable Laundry Solutions For Your Business
+                </h2>
+
+                <p>
+                    Nathans provides professional garment and textile care
+                    solutions designed for organisations that need dependable
+                    service at scale.
+                </p>
+
+                <ul class="corporate-list">
+                    <li>Hotels and hospitality</li>
+                    <li>Corporate organisations</li>
+                    <li>Restaurants and food businesses</li>
+                    <li>Healthcare organisations</li>
+                    <li>Schools and institutions</li>
+                </ul>
+
+            </div>
+
+            <div class="corporate-box">
+
+                <h3>Need a Corporate Account?</h3>
+
+                <p>
+                    Talk to our team about creating a customised laundry
+                    and garment-care solution for your organisation.
+                </p>
+
+                <a href="#contact" class="btn btn-primary">
+                    Contact Our Team
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="locations" id="locations">
+
+        <div class="container">
+
+            <div class="section-heading" style="margin-left:auto;margin-right:auto;">
+
+                <div class="section-label">
+                    Find Nathans
+                </div>
+
+                <h2>
+                    Our Locations
+                </h2>
+
+                <p>
+                    Visit a Nathans Dry Cleaners location or request
+                    pickup and delivery from your area.
+                </p>
+
+            </div>
+
+            <div class="locations-grid">
+
+                <div class="location-card">
+                    <h3>Owerri</h3>
+                    <p>Imo State, Nigeria</p>
+                </div>
+
+                <div class="location-card">
+                    <h3>Lagos</h3>
+                    <p>Lagos State, Nigeria</p>
+                </div>
+
+                <div class="location-card">
+                    <h3>More Locations</h3>
+                    <p>Our network is growing.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+
+        <div class="container">
+
+            <div class="section-label">
+                Get Started
+            </div>
+
+            <h2>
+                Your Clothes Deserve Nathans.
+            </h2>
+
+            <p>
+                Book a pickup, visit a branch or speak with our team
+                about your garment care needs.
+            </p>
+
+            <a href="https://wa.me/2348000000000" class="btn nav-button">
+                Book via WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <h3>NATHANS</h3>
+
+                    <p>
+                        Professional dry cleaning, laundry and garment care
+                        services focused on quality and convenience.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Company</h3>
+
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Services</h3>
+
+                    <ul>
+                        <li>Dry Cleaning</li>
+                        <li>Laundry</li>
+                        <li>Pickup & Delivery</li>
+                        <li>Corporate Services</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact</h3>
+
+                    <ul>
+                        <li>Phone: Coming Soon</li>
+                        <li>Email: Coming Soon</li>
+                        <li>Nigeria</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 Nathans Dry Cleaners. All Rights Reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a
+        href="https://wa.me/2348000000000"
+        class="whatsapp"
+        aria-label="Contact Nathans on WhatsApp">
+        ☎
+    </a>
+
+</body>
+</html>
