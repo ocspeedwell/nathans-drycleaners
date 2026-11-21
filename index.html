@@ -653,6 +653,45 @@
                 min-height: 300px;
             }
         }
+    
+/* Nathans premium photographic refresh */
+:root{--navy:#071b3a;--blue:#0c4da2;--gold:#c5a36a}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.hero{position:relative;isolation:isolate;min-height:710px;background:#071b3a}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1800&q=82") center 35%/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,20,45,.97) 0%,rgba(5,20,45,.88) 44%,rgba(5,20,45,.32) 100%)}
+.hero h1{letter-spacing:-.045em;max-width:800px}
+.hero-label{color:#e8c98d}
+.hero h1 span{color:#f2d49d}
+.btn,.nav-button{border-radius:999px}
+.btn-primary{background:#f0d6a4;color:#071b3a}
+.btn-primary:hover{background:#fff}
+.service-card{padding:0;overflow:hidden;border-radius:16px}
+.service-card .service-icon{display:none}
+.service-card h3,.service-card p{margin-left:26px;margin-right:26px}
+.service-card p{margin-bottom:30px}
+.service-photo{display:block;width:100%;height:225px;object-fit:cover;object-position:center;background:#dce7f0}
+.service-card h3{margin-top:25px}
+.about-image{padding:0;overflow:hidden;background:#eaf1f7;min-height:470px}
+.about-image img{width:100%;height:470px;object-fit:cover;object-position:center}
+.about-image-content{display:none}
+.photo-credit{font-size:11px;color:#7b8797;text-align:right;margin-top:10px}
+.location-card{border-radius:14px;text-align:left;transition:transform .2s,box-shadow .2s}
+.location-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(7,27,58,.08)}
+.nav-button{border-radius:999px}
+.nathans-concierge-launch{position:fixed;right:22px;bottom:88px;z-index:1100;border:0;border-radius:999px;background:#071b3a;color:white;padding:14px 19px;box-shadow:0 8px 30px #071b3a55;font:700 14px system-ui;cursor:pointer}
+.nathans-concierge-panel{position:fixed;right:20px;bottom:148px;z-index:1101;width:min(370px,calc(100vw - 32px));max-height:min(570px,calc(100dvh - 165px));overflow:auto;background:white;border-radius:20px;box-shadow:0 18px 65px #071b3a44;border:1px solid #dce5ef;padding:23px;color:#071b3a}
+.nathans-concierge-panel[hidden]{display:none}
+.nathans-concierge-panel h2{font-size:21px;margin-bottom:8px}
+.nathans-concierge-panel p{font-size:13px;color:#536477;margin-bottom:15px}
+.nathans-concierge-panel label{font-size:13px;font-weight:700;display:block;margin:12px 0 5px}
+.nathans-concierge-panel select,.nathans-concierge-panel textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px;font:inherit;font-size:14px;background:white}
+.nathans-concierge-panel textarea{min-height:85px;resize:vertical}
+.nathans-concierge-panel button[type=submit]{width:100%;margin-top:14px;border:0;background:#0c4da2;color:white;padding:13px;border-radius:9px;font-weight:700;cursor:pointer}
+.nathans-concierge-close{float:right;border:0;background:transparent;font-size:25px;cursor:pointer}
+@media(max-width:720px){.hero{min-height:650px}.hero:before{background-position:62% center}.hero:after{background:linear-gradient(90deg,rgba(5,20,45,.94),rgba(5,20,45,.67))}.nathans-concierge-launch{bottom:84px;right:12px}.nathans-concierge-panel{right:12px;bottom:143px}.service-photo{height:205px}}
+@media(prefers-reduced-motion:reduce){.location-card,.btn{transition:none}}
+
     </style>
 </head>
 
@@ -761,17 +800,7 @@
 
         <div class="container about-grid">
 
-            <div class="about-image">
-
-                <div class="about-image-content">
-                    <h3>NATHANS</h3>
-                    <p>
-                        Professional garment care built around
-                        quality, trust and convenience.
-                    </p>
-                </div>
-
-            </div>
+            <div class="about-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=80" alt="Carefully selected clothing on display, illustrating premium garment care" loading="lazy" decoding="async"></div>
 
             <div class="about-text">
 
@@ -831,6 +860,7 @@
             <div class="services-grid">
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=900&q=78" alt="Freshly pressed garments prepared for professional care" loading="lazy" decoding="async">
                     <div class="service-icon">✦</div>
                     <h3>Dry Cleaning</h3>
                     <p>
@@ -840,6 +870,7 @@
                 </div>
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=900&q=78" alt="Clean laundry in a modern washing machine" loading="lazy" decoding="async">
                     <div class="service-icon">◈</div>
                     <h3>Laundry</h3>
                     <p>
@@ -849,6 +880,7 @@
                 </div>
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=78" alt="Quality clothing arranged for careful finishing" loading="lazy" decoding="async">
                     <div class="service-icon">✓</div>
                     <h3>Pressing</h3>
                     <p>
@@ -858,6 +890,7 @@
                 </div>
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=78" alt="Neatly arranged garments and clothing" loading="lazy" decoding="async">
                     <div class="service-icon">◇</div>
                     <h3>Pickup & Delivery</h3>
                     <p>
@@ -867,6 +900,7 @@
                 </div>
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=78" alt="Well-presented clothing for specialist garment care" loading="lazy" decoding="async">
                     <div class="service-icon">▣</div>
                     <h3>Household Items</h3>
                     <p>
@@ -876,6 +910,7 @@
                 </div>
 
                 <div class="service-card">
+<img class="service-photo" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=78" alt="Garments ready for collection and delivery" loading="lazy" decoding="async">
                     <div class="service-icon">◆</div>
                     <h3>Corporate Laundry</h3>
                     <p>
@@ -1172,6 +1207,40 @@
         aria-label="Contact Nathans on WhatsApp">
         ☎
     </a>
+
+
+<!-- Guided concierge: customer enquiry only, not an AI response or confirmed booking -->
+<button class="nathans-concierge-launch" type="button" id="concierge-open" aria-controls="concierge-panel" aria-expanded="false">✦ Nathans Concierge</button>
+<aside class="nathans-concierge-panel" id="concierge-panel" role="dialog" aria-label="Nathans customer concierge" hidden>
+<button class="nathans-concierge-close" id="concierge-close" type="button" aria-label="Close concierge">×</button>
+<h2>How may we help?</h2>
+<p>Tell us your preferred branch and service. We will prepare a WhatsApp enquiry for our team. This is not a confirmed booking.</p>
+<form id="concierge-form">
+<label for="concierge-branch">Preferred branch</label>
+<select id="concierge-branch" required><option value="">Choose a branch</option><option>Lagos</option><option>Abuja</option><option>Enugu</option><option>Port Harcourt</option><option>Asaba</option><option>Owerri</option><option>New Owerri</option></select>
+<label for="concierge-service">What do you need?</label>
+<select id="concierge-service" required><option value="">Choose a service</option><option>Dry cleaning</option><option>Laundry and pressing</option><option>Pickup and delivery enquiry</option><option>Corporate laundry</option><option>Prices and availability</option><option>Other enquiry</option></select>
+<label for="concierge-message">Additional details (optional)</label>
+<textarea id="concierge-message" maxlength="500" placeholder="Garments, preferred pickup area, or questions"></textarea>
+<button type="submit">Continue on WhatsApp ↗</button>
+</form>
+</aside>
+<script>
+(function(){
+ const open=document.getElementById('concierge-open'),close=document.getElementById('concierge-close'),panel=document.getElementById('concierge-panel');
+ function toggle(show){panel.hidden=!show;open.setAttribute('aria-expanded',String(show));if(show)document.getElementById('concierge-branch').focus();else open.focus();}
+ open.addEventListener('click',()=>toggle(panel.hidden));
+ close.addEventListener('click',()=>toggle(false));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)toggle(false)});
+ document.getElementById('concierge-form').addEventListener('submit',function(e){
+ e.preventDefault();
+ const branch=document.getElementById('concierge-branch').value,service=document.getElementById('concierge-service').value,details=document.getElementById('concierge-message').value.trim();
+ if(!branch||!service)return;
+ const msg='Hello Nathans, I would like to enquire about '+service+'.\nPreferred branch: '+branch+(details?'\nDetails: '+details:'')+'\nPlease confirm availability and any applicable prices.';
+ window.open('https://wa.me/2347076761488?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+ });
+})();
+</script>
 
 </body>
 </html>
