@@ -1247,7 +1247,7 @@ body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <aside class="nathans-concierge-panel" id="concierge-panel" role="dialog" aria-label="Nathans customer concierge" hidden>
 <button class="nathans-concierge-close" id="concierge-close" type="button" aria-label="Close concierge">×</button>
 <h2>How may we help?</h2>
-<p>Tell us your preferred branch and service. We will prepare a WhatsApp enquiry for our team. This is not a confirmed booking.</p>
+<p>Tell us your preferred branch and service. We will prepare an enquiry for your selected branch. Direct WhatsApp routing is configured for all seven branches, subject to WhatsApp activation. This is not a confirmed booking.</p>
 <form id="concierge-form">
 <label for="concierge-branch">Preferred branch</label>
 <select id="concierge-branch" required><option value="">Choose a branch</option><option>Lagos</option><option>Abuja</option><option>Enugu</option><option>Port Harcourt</option><option>Asaba</option><option>Owerri</option><option>New Owerri</option></select>
@@ -1275,7 +1275,10 @@ body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
  const branch=document.getElementById('concierge-branch').value,service=document.getElementById('concierge-service').value,details=document.getElementById('concierge-message').value.trim();
  if(!branch||!service)return;
  const msg='Hello Nathans, I would like to enquire about '+service+'.\nPreferred branch: '+branch+(details?'\nDetails: '+details:'')+'\nPlease confirm availability and any applicable prices.';
- window.open('https://wa.me/2347076761488?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+ const branchNumbers={'Lagos':'2348103802839','Abuja':'2348103802844','Enugu':'2348103802847','Port Harcourt':'2348103802843','Asaba':'2348103802838','Owerri':'2348103802840','New Owerri':'2347076761488'};
+ const number=branchNumbers[branch];
+ if(!number){alert('Direct WhatsApp contact for '+branch+' is not yet available. Please contact Nathans to confirm this branch number.');return;}
+ window.open('https://wa.me/'+number+'?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
  });
 })();
 </script>
