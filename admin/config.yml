@@ -2,8 +2,9 @@ backend:
   name: github
   repo: ocspeedwell/nathans-drycleaners
   branch: feature/garment-care-journal
-  # Set base_url and auth_endpoint after deploying a trusted GitHub OAuth bridge.
-  # GitHub authentication will not work until OAuth is configured.
+  base_url: https://nathansdrycleaners.com
+  auth_endpoint: api/cms/auth
+  # OAuth functions require server-side Vercel environment variables.
 publish: false
 media_folder: "assets/journal"
 public_folder: "/assets/journal"
