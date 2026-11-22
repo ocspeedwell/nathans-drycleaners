@@ -768,6 +768,9 @@ body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .nathans-concierge-panel button[type=submit]{flex-shrink:0;min-height:48px;white-space:normal;background:#d6a21c;color:#071b3a}
 body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:has(.nathans-concierge-panel:not([hidden])) .concierge-welcome{display:none}
 @media(max-width:600px){.nathans-concierge-panel{top:12px;right:12px;bottom:12px;left:12px;width:auto;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:18px 17px 22px;border-radius:18px}.nathans-concierge-panel h2{font-size:20px}.nathans-concierge-panel p{line-height:1.5}.nathans-concierge-panel button[type=submit]{margin-bottom:2px}}
+
+/* BRANCH PRICING */
+.pricing-section{background:#f5f7fb;padding:76px 0}.pricing-panel{max-width:1000px;margin:0 auto;background:#fff;border:1px solid #e1e7f0;border-radius:18px;padding:30px;box-shadow:0 12px 35px rgba(7,27,58,.06)}.pricing-panel label{display:block;font-weight:700;color:#071b3a;margin-bottom:8px}.pricing-panel select{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font:inherit;color:#071b3a}.pricing-status{margin:20px 0;padding:16px;border-radius:10px;background:#f4f7fc;color:#34435b}.pricing-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.pricing-actions a{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:8px;background:#0c4da2;color:#fff;font-weight:700}.pricing-actions a:focus-visible,.pricing-panel select:focus-visible{outline:3px solid #e6ad35;outline-offset:3px}@media(max-width:600px){.pricing-section{padding:50px 0}.pricing-panel{padding:20px}}
 </style>
 </head>
 
@@ -794,6 +797,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#locations">Locations</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#contact" class="nav-button" data-open-concierge>Request a Pickup</a></li>
@@ -992,6 +996,29 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
 
     </section>
 
+
+    <!-- BRANCH-SPECIFIC PRICING -->
+    <section id="pricing" class="pricing-section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-heading"><div class="section-label">Transparent, Local Pricing</div><h2 id="pricing-title">Pricing for Your Nathans Branch</h2><p>Select your preferred location to enquire about its current garment-care rates. Each branch maintains its own price list.</p></div>
+        <div class="pricing-panel">
+          <label for="pricing-branch">Choose your branch</label>
+          <select id="pricing-branch">
+            <option value="">Select a Nathans branch</option>
+            <option value="Victoria Island, Lagos">Victoria Island, Lagos</option>
+            <option value="Abuja">Abuja</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Port Harcourt">Port Harcourt</option>
+            <option value="Asaba">Asaba</option>
+            <option value="Owerri MCC Road">Owerri MCC Road</option>
+            <option value="New Owerri">New Owerri</option>
+          </select>
+          <div id="pricing-status" class="pricing-status" role="status" aria-live="polite">Select a branch to see how to request its current price list. Online price tables will be published after the branch rates have been confirmed.</div>
+          <div class="pricing-actions"><a id="pricing-whatsapp" href="#pricing" aria-disabled="true">Select a branch to enquire on WhatsApp</a></div>
+          <p style="font-size:13px;color:#52627a;margin-top:14px">Pickup requests and confirmations are handled exclusively through WhatsApp. Prices and availability are confirmed by the selected branch.</p>
+        </div>
+      </div>
+    </section>
     <!-- WHY NATHANS -->
     <section>
 
@@ -1318,5 +1345,19 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
 })();
 </script>
 
+
+<script>
+(function(){
+ const select=document.getElementById('pricing-branch'),status=document.getElementById('pricing-status'),link=document.getElementById('pricing-whatsapp');
+ if(!select||!status||!link)return;
+ const contacts={'Victoria Island, Lagos':'2348103802839','Abuja':'2348103802844','Enugu':'2348103802847','Port Harcourt':'2348103802843','Asaba':'2348103802838','Owerri MCC Road':'2348103802840','New Owerri':'2347076761488'};
+ select.addEventListener('change',function(){
+   const branch=select.value,number=contacts[branch];
+   if(!number){status.textContent='Select a branch to see how to request its current price list. Online price tables will be published after the branch rates have been confirmed.';link.textContent='Select a branch to enquire on WhatsApp';link.href='#pricing';link.setAttribute('aria-disabled','true');return;}
+   status.textContent='The '+branch+' branch price list is being prepared for online display. For accurate current rates, request a quotation directly from this branch on WhatsApp.';
+   link.textContent='Request '+branch+' prices on WhatsApp';link.href='https://wa.me/'+number+'?text='+encodeURIComponent('Hello Nathans Dry Cleaners, please share your current garment care price list for '+branch+'. I would also like to know how to arrange pickup via WhatsApp.');link.target='_blank';link.rel='noopener noreferrer';link.removeAttribute('aria-disabled');
+ });
+})();
+</script>
 </body>
 </html>
