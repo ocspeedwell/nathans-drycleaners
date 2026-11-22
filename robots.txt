@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nathansdrycleaners.com/sitemap.xml
