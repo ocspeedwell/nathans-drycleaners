@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: ocspeedwell/nathans-drycleaners
-  branch: main
+  branch: feature/garment-care-journal
   # Set base_url and auth_endpoint after deploying a trusted GitHub OAuth bridge.
   # GitHub authentication will not work until OAuth is configured.
 publish: false
