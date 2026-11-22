@@ -2,7 +2,6 @@
 """Build Nathans journal pages from editorial Markdown using a safe, repeatable build."""
 from pathlib import Path
 from html import escape
-from urllib.parse import quote
 import json
 import re
 import sys
@@ -18,11 +17,11 @@ CATEGORIES = {"Fabric Care & Stain Removal", "Professional Dry Cleaning", "Laund
 ALLOWED_TAGS = set(bleach.sanitizer.ALLOWED_TAGS) | {"p", "h2", "h3", "h4", "br", "hr", "img", "blockquote"}
 ALLOWED_ATTRS = {"a": ["href", "title"], "img": ["src", "alt", "title"]}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-IMAGE = re.compile(r"^/assets/journal/[a-zA-Z0-9_./-]+\\.(?:png|jpe?g|webp)$")
+IMAGE = re.compile(r"^/assets/journal/[a-zA-Z0-9_./-]+\.(?:png|jpe?g|webp)$")
 
 def parse(path):
     text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\\n"):
+    if not text.startswith("---\n"):
         raise ValueError(f"{path}: expected YAML front matter")
     _, header, body = text.split("---", 2)
     meta = yaml.safe_load(header)
@@ -63,13 +62,15 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(render(a), encoding="utf-8")
         print("Built", dest.relative_to(ROOT))
+    catalogue = [{"title": a["title"], "category": a["category"], "slug": a["slug"], "description": a["description"], "image": a["image"]} for a in articles]
+    (OUTPUT / "articles.json").write_text(json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     sitemap = ROOT / "sitemap.xml"
     if sitemap.exists():
         existing = sitemap.read_text(encoding="utf-8")
         new_urls = [f"{SITE}/journal/{a['slug']}/" for a in articles]
         for url in new_urls:
             if f"<loc>{url}</loc>" not in existing:
-                existing = existing.replace("</urlset>", f"  <url><loc>{url}</loc></url>\\n</urlset>")
+                existing = existing.replace("</urlset>", f"  <url><loc>{url}</loc></url>\n</urlset>")
         sitemap.write_text(existing, encoding="utf-8")
 
 if __name__ == "__main__":
