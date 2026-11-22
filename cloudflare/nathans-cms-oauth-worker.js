@@ -5,9 +5,8 @@
  * Required vars: CMS_ORIGIN (e.g. https://nathansdrycleaners.com).
  * GitHub OAuth callback: https://<worker-host>/callback
  */
-const encoder = new TextEncoder();
 function bytesToBase64url(bytes) {
-  return btoa(String.fromCharCode(...bytes)).replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '');
+  return btoa(String.fromCharCode(...bytes)).split('+').join('-').split('/').join('_').replace(/=+$/, '');
 }
 function randomState() {
   const bytes = crypto.getRandomValues(new Uint8Array(32));
@@ -28,7 +27,7 @@ function fail(origin, reason, status=400) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const origin = (env.CMS_ORIGIN || '').replace(/\\/$/, '');
+    const origin = (env.CMS_ORIGIN || '').replace(/\/$/, '');
     if (!origin.startsWith('https://') || !env.GITHUB_CLIENT_ID || !env.GITHUB_CLIENT_SECRET) return new Response('OAuth bridge is not configured.',{status:503});
     if (url.pathname === '/auth' && request.method === 'GET') {
       const state = randomState();
