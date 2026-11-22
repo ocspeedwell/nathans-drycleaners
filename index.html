@@ -1238,9 +1238,21 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
                 about your garment care needs.
             </p>
 
-            <a href="https://wa.me/2347076761488" class="btn nav-button">
-                Enquire via WhatsApp
-            </a>
+            <div class="cta-branch-box">
+                <label for="cta-branch" style="display:block;font-weight:700;margin-bottom:10px">Choose your nearest Nathans branch</label>
+                <select id="cta-branch" aria-label="Select branch for WhatsApp enquiry" style="width:100%;max-width:430px;padding:14px 16px;border:1px solid #cad4e3;border-radius:10px;font:inherit;background:#fff;color:#071b3a">
+                    <option value="">Select a branch</option>
+                    <option value="2348103802839">Victoria Island, Lagos</option>
+                    <option value="2348103802844">Abuja</option>
+                    <option value="2348103802847">Enugu</option>
+                    <option value="2348103802843">Port Harcourt</option>
+                    <option value="2348103802838">Asaba</option>
+                    <option value="2348103802840">Owerri MCC Road</option>
+                    <option value="2347076761488">New Owerri</option>
+                </select>
+                <div style="margin-top:20px"><a id="cta-branch-whatsapp" href="#contact" class="btn nav-button" aria-disabled="true" style="display:inline-block">Select a branch to chat on WhatsApp</a></div>
+                <p id="cta-branch-message" role="status" aria-live="polite" style="font-size:14px;margin-top:12px">Your enquiry will go directly to your selected branch.</p>
+            </div>
 
         </div>
 
@@ -1369,6 +1381,19 @@ status.textContent=shown+' matching items. '+(b===6?'The supplied master list ha
 total.textContent='Estimated total: '+fmt(sum);const msg='Hello Nathans Dry Cleaners, I am enquiring about '+branches[b]+'.\n'+(lines.length?'My items:\n'+lines.join('\n')+'\nEstimated total: '+fmt(sum)+'\n':'Please share your current price list.\n')+'Please confirm final pricing and help me arrange pickup on WhatsApp.';link.href='https://wa.me/'+phones[b]+'?text='+encodeURIComponent(msg);link.textContent=lines.length?'Send estimate and arrange pickup on WhatsApp':'Enquire and arrange pickup on WhatsApp';link.target='_blank';link.rel='noopener noreferrer';
 }
 branch.addEventListener('change',()=>{quantities.clear();catalogue.hidden=!branch.value;search.value='';if(branch.value)render()});search.addEventListener('input',render);
+})();
+</script>
+<script>
+(function(){
+const select=document.getElementById('cta-branch'),button=document.getElementById('cta-branch-whatsapp'),status=document.getElementById('cta-branch-message');
+if(!select||!button)return;
+select.addEventListener('change',function(){
+const phone=select.value,branch=select.options[select.selectedIndex].text;
+if(!phone){button.href='#contact';button.textContent='Select a branch to chat on WhatsApp';button.removeAttribute('target');button.setAttribute('aria-disabled','true');status.textContent='Your enquiry will go directly to your selected branch.';return;}
+const message='Hello Nathans Dry Cleaners, I would like to enquire about your services and arrange a pickup with your '+branch+' branch. Please assist me.';
+button.href='https://wa.me/'+phone+'?text='+encodeURIComponent(message);button.target='_blank';button.rel='noopener noreferrer';button.removeAttribute('aria-disabled');button.textContent='Chat with '+branch+' on WhatsApp';status.textContent='Pickup details and confirmation will be handled on WhatsApp by the '+branch+' branch.';
+});
+button.addEventListener('click',function(e){if(!select.value){e.preventDefault();select.focus();status.textContent='Please select your branch first.';}});
 })();
 </script>
 </body>
