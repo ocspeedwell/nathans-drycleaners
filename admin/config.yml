@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: ocspeedwell/nathans-drycleaners
+  branch: main
+  # Set base_url and auth_endpoint after deploying a trusted GitHub OAuth bridge.
+  # GitHub authentication will not work until OAuth is configured.
+publish: false
+media_folder: "assets/journal"
+public_folder: "/assets/journal"
+collections:
+  - name: "journal"
+    label: "Journal editorial drafts"
+    label_singular: "Journal draft"
+    folder: "content/journal"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "SEO description", name: "description", widget: "text", hint: "Aim for a concise, accurate summary."}
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Fabric Care & Stain Removal", "Professional Dry Cleaning", "Laundry & Lifestyle", "Nathans Locations & Services"]
+      - {label: "Featured image", name: "image", widget: "image", required: false}
+      - {label: "Article body", name: "body", widget: "markdown"}
