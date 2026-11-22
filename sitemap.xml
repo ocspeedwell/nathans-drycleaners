@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://nathansdrycleaners.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nathansdrycleaners.com/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/journal/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/lagos/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/abuja/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/enugu/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/owerri-mcc/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/new-owerri/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/asaba/</loc></url>
+  <url><loc>https://nathansdrycleaners.com/locations/port-harcourt/</loc></url>
+</urlset>
