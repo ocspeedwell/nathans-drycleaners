@@ -81,7 +81,8 @@
             gap: 10px;
         }
 
-        .brand-logo-image { width: 184px; height: 74px; object-fit: contain; object-position: left center; }\n        .logo-mark {
+        .brand-logo-image { display: block; width: 184px; max-width: 100%; height: 68px; object-fit: contain; object-position: left center; }
+        .logo-mark {
             width: 48px;
             height: 48px;
             border-radius: 50%;
@@ -784,13 +785,8 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
     <header>
         <div class="container navbar">
 
-            <a href="#" class="logo">
-                <div class="logo-mark">N</div>
-
-                <div class="logo-text">
-                    NATHANS
-                    <span>DRY CLEANERS</span>
-                </div>
+            <a href="#home" class="logo" aria-label="Nathans Dry Cleaners, home">
+                <img class="brand-logo-image" src="assets/nathans-logo.webp" alt="Nathans Dry Cleaners" width="184" height="74" decoding="async">
             </a>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation">☰ Menu</button>
