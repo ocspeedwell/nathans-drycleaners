@@ -2,6 +2,7 @@
 title: "Dry Cleaning in Owerri: What to Ask"
 description: "Nathans has two Owerri branches, at MCC Road and New Owerri."
 category: "Nathans Locations & Services"
+image: "/assets/journal/owerri-dry-cleaning-guide.webp"
 ---
 
 Nathans has two Owerri branches, at MCC Road and New Owerri.
