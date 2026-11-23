@@ -2,6 +2,7 @@
 title: "How Often Should You Dry Clean a Suit?"
 description: "Suits do not necessarily need dry cleaning after every wear. Airing, gentle brushing and prompt attention to spills can help preserve fabric."
 category: "Professional Dry Cleaning"
+image: "/assets/journal/suit-cleaning-frequency.webp"
 ---
 
 Suits do not necessarily need dry cleaning after every wear. Airing, gentle brushing and prompt attention to spills can help preserve fabric.
