@@ -2,7 +2,7 @@
 title: "Duvet and Bedding Care Guide"
 description: "Clean bedding supports a comfortable home, but bulky duvets need sufficient washing and drying capacity."
 category: "Laundry & Lifestyle"
-image: "/assets/journal/duvet-bedding-care.webp"
+image: "/assets/journal/duvet-bedding-care.svg"
 ---
 
 Clean bedding supports a comfortable home, but bulky duvets need sufficient washing and drying capacity.
