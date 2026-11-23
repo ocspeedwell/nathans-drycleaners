@@ -823,6 +823,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#locations">Locations</a></li>
+                <li><a href="/journal/">The Journal</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#contact" class="nav-button" data-open-concierge>Request a Pickup</a></li>
             </ul>
@@ -1023,7 +1024,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
 
     <!-- BRANCH-SPECIFIC PRICING -->
 <section id="pricing" class="pricing-section" aria-labelledby="pricing-title"><div class="container">
-<div class="section-heading"><div class="section-label">Branch Price Guide</div><h2 id="pricing-title">Find Your Laundry Prices</h2><p>Choose a Nathans branch, search garments and estimate your laundry total. All pickup arrangements are completed on WhatsApp.</p></div>
+<div class="section-heading"><div class="section-label">Branch Price Guide</div><h2 id="pricing-title">Find Your Laundry Prices</h2><p>Choose a Nathans branch, search garments and estimate your laundry total. Pickup arrangements are handled through Telegram for Lagos and WhatsApp for other branches.</p></div>
 <div class="pricing-panel">
 <label for="pricing-branch">Your preferred branch</label><select id="pricing-branch"><option value="">Choose branch</option><option value="0">Victoria Island, Lagos</option><option value="1">Abuja</option><option value="2">Asaba</option><option value="3">Enugu</option><option value="4">Port Harcourt</option><option value="5">Owerri MCC Road</option><option value="6">New Owerri</option></select>
 <div id="pricing-catalogue" hidden>
@@ -1246,7 +1247,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
 
             <div class="cta-branch-box">
                 <label for="cta-branch" style="display:block;font-weight:700;margin-bottom:10px">Choose your nearest Nathans branch</label>
-                <select id="cta-branch" aria-label="Select branch for WhatsApp enquiry" style="width:100%;max-width:430px;padding:14px 16px;border:1px solid #cad4e3;border-radius:10px;font:inherit;background:#fff;color:#071b3a">
+                <select id="cta-branch" aria-label="Select branch for messaging enquiry" style="width:100%;max-width:430px;padding:14px 16px;border:1px solid #cad4e3;border-radius:10px;font:inherit;background:#fff;color:#071b3a">
                     <option value="">Select a branch</option>
                     <option value="2348103802839">Victoria Island, Lagos</option>
                     <option value="2348103802844">Abuja</option>
@@ -1287,6 +1288,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#locations">Locations</a></li>
+                        <li><a href="/journal/">The Journal</a></li>
                     </ul>
                 </div>
 
@@ -1329,7 +1331,7 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
 <aside class="nathans-concierge-panel" id="concierge-panel" role="dialog" aria-label="Nathans customer concierge" hidden>
 <button class="nathans-concierge-close" id="concierge-close" type="button" aria-label="Close concierge">×</button>
 <h2>How may we help?</h2>
-<p>Tell us your preferred branch and service. We will prepare an enquiry for your selected branch. Direct WhatsApp routing is configured for all seven branches, subject to WhatsApp activation. This is not a confirmed booking.</p>
+<p>Tell us your preferred branch and service. We will prepare an enquiry for your selected branch. Lagos enquiries open Telegram. Other branches use WhatsApp. Messaging does not confirm a booking. This is not a confirmed booking.</p>
 <form id="concierge-form">
 <label for="concierge-branch">Preferred branch</label>
 <select id="concierge-branch" required><option value="">Choose a branch</option><option>Lagos</option><option>Abuja</option><option>Enugu</option><option>Port Harcourt</option><option>Asaba</option><option>Owerri</option><option>New Owerri</option></select>
@@ -1359,7 +1361,8 @@ body:has(.nathans-concierge-panel:not([hidden])) .nathans-concierge-launch,body:
  const msg='Hello Nathans, I would like to enquire about '+service+'.\nPreferred branch: '+branch+(details?'\nDetails: '+details:'')+'\nPlease confirm availability and any applicable prices.';
  const branchNumbers={'Lagos':'2348103802839','Abuja':'2348103802844','Enugu':'2348103802847','Port Harcourt':'2348103802843','Asaba':'2348103802838','Owerri':'2348103802840','New Owerri':'2347076761488'};
  const number=branchNumbers[branch];
- if(!number){alert('Direct WhatsApp contact for '+branch+' is not yet available. Please contact Nathans to confirm this branch number.');return;}
+ if(branch==='Lagos'){navigator.clipboard?.writeText(msg).catch(()=>{});window.open('https://t.me/NathansDrycleanerLtd','_blank','noopener,noreferrer');return;}
+ if(!number){alert('Contact is unavailable for '+branch+'.');return;}
  window.open('https://wa.me/'+number+'?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
  });
 })();
@@ -1376,8 +1379,8 @@ function render(){
 const b=Number(branch.value),term=search.value.toLowerCase().trim();items.replaceChildren();cartItems.replaceChildren();let shown=0,sum=0,lines=[];
 rows.forEach((r,i)=>{const price=r[b+1];if(!r[0].toLowerCase().includes(term))return;shown++;const row=document.createElement('div');row.style.cssText='display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #edf0f5';const info=document.createElement('div');info.style.flex='1';const title=document.createElement('strong');title.textContent=r[0];info.append(title);const note=document.createElement('div');note.style.cssText='font-size:13px;color:#56677e';note.textContent=price?fmt(price)+' per item':'Price on request';info.append(note);row.append(info);if(price){const qty=document.createElement('input');qty.type='number';qty.min='0';qty.max='999';qty.step='1';qty.value=quantities.get(i)||0;qty.setAttribute('aria-label','Quantity for '+r[0]);qty.style.cssText='width:75px;padding:9px;border:1px solid #cbd5e1;border-radius:8px';qty.addEventListener('change',()=>{const n=Math.max(0,Math.min(999,Math.floor(Number(qty.value)||0)));if(n)quantities.set(i,n);else quantities.delete(i);render()});row.append(qty)}else{const a=document.createElement('span');a.style.cssText='font-size:12px;color:#5b6472';a.textContent='Ask branch';row.append(a)}items.append(row)});
 quantities.forEach((q,i)=>{const r=rows[i],p=r[b+1];if(!p)return;sum+=q*p;lines.push(r[0]+' x '+q+' = '+fmt(q*p));const div=document.createElement('div');div.textContent=r[0]+' × '+q+' = '+fmt(q*p);cartItems.append(div)});
-status.textContent=shown+' matching items. '+(b===6?'The supplied master list has no numeric New Owerri rates, so please request prices on WhatsApp.':'Unpriced items require confirmation from the branch.');
-total.textContent='Estimated total: '+fmt(sum);const msg='Hello Nathans Dry Cleaners, I am enquiring about '+branches[b]+'.\n'+(lines.length?'My items:\n'+lines.join('\n')+'\nEstimated total: '+fmt(sum)+'\n':'Please share your current price list.\n')+'Please confirm final pricing and help me arrange pickup on WhatsApp.';link.href='https://wa.me/'+phones[b]+'?text='+encodeURIComponent(msg);link.textContent=lines.length?'Send estimate and arrange pickup on WhatsApp':'Enquire and arrange pickup on WhatsApp';link.target='_blank';link.rel='noopener noreferrer';
+status.textContent=shown+' matching items. '+(b===6?'The supplied master list has no numeric New Owerri rates, so please request prices from the branch.':'Unpriced items require confirmation from the branch.');
+total.textContent='Estimated total: '+fmt(sum);const msg='Hello Nathans Dry Cleaners, I am enquiring about '+branches[b]+'.\n'+(lines.length?'My items:\n'+lines.join('\n')+'\nEstimated total: '+fmt(sum)+'\n':'Please share your current price list.\n')+'Please confirm final pricing and help me arrange pickup on WhatsApp.';link.href=b===0?'https://t.me/NathansDrycleanerLtd':'https://wa.me/'+phones[b]+'?text='+encodeURIComponent(msg);link.textContent=b===0?'Enquire with Lagos on Telegram':(lines.length?'Send estimate and arrange pickup on WhatsApp':'Enquire and arrange pickup on WhatsApp');link.target='_blank';link.rel='noopener noreferrer';
 }
 branch.addEventListener('change',()=>{quantities.clear();catalogue.hidden=!branch.value;search.value='';if(branch.value)render()});search.addEventListener('input',render);
 })();
@@ -1390,10 +1393,11 @@ select.addEventListener('change',function(){
 const phone=select.value,branch=select.options[select.selectedIndex].text;
 if(!phone){button.href='#contact';button.textContent='Select a branch to chat on WhatsApp';button.removeAttribute('target');button.setAttribute('aria-disabled','true');status.textContent='Your enquiry will go directly to your selected branch.';return;}
 const message='Hello Nathans Dry Cleaners, I would like to enquire about your services and arrange a pickup with your '+branch+' branch. Please assist me.';
-button.href='https://wa.me/'+phone+'?text='+encodeURIComponent(message);button.target='_blank';button.rel='noopener noreferrer';button.removeAttribute('aria-disabled');button.textContent='Chat with '+branch+' on WhatsApp';status.textContent='Pickup details and confirmation will be handled on WhatsApp by the '+branch+' branch.';
+const isLagos=phone==='2348103802839';button.href=isLagos?'https://t.me/NathansDrycleanerLtd':'https://wa.me/'+phone+'?text='+encodeURIComponent(message);button.target='_blank';button.rel='noopener noreferrer';button.removeAttribute('aria-disabled');button.textContent='Chat with '+branch+' on '+(isLagos?'Telegram':'WhatsApp');status.textContent=isLagos?'Lagos enquiries are handled on Telegram. Please send your enquiry in the Telegram chat.':'Pickup details and confirmation will be handled on WhatsApp by the '+branch+' branch.';
 });
 button.addEventListener('click',function(e){if(!select.value){e.preventDefault();select.focus();status.textContent='Please select your branch first.';}});
 })();
 </script>
+<div class="nathans-journal-link" style="background:#071b3a;color:#fff;text-align:center;padding:28px 18px"><strong style="display:block;font:26px Georgia,serif;margin-bottom:8px">The Nathans Journal</strong><p style="margin:0 0 14px">Explore expert tips on fabrics, stains, traditional attire and professional garment care.</p><a href="/journal/" style="display:inline-block;background:#caa657;color:#071b3a;padding:10px 22px;border-radius:5px;font-weight:bold;text-decoration:none">Explore the Journal</a></div>
 </body>
 </html>
