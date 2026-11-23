@@ -2,7 +2,7 @@
 title: "What to Do Immediately After a Stain"
 description: "Act quickly, but resist the urge to rub. Blot excess liquid with a clean cloth and check the garment's care instructions before applying water."
 category: "Fabric Care & Stain Removal"
-image: "/assets/journal/stain-first-aid.webp"
+image: "/assets/journal/stain-first-aid.svg"
 ---
 
 Act quickly, but resist the urge to rub. Blot excess liquid with a clean cloth and check the garment's care instructions before applying water.
