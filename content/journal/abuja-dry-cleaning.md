@@ -2,6 +2,7 @@
 title: "Finding Dry Cleaning Services in Abuja"
 description: "If you need professional garment care around Wuse II, contact the Nathans Abuja team directly."
 category: "Nathans Locations & Services"
+image: "/assets/journal/abuja-dry-cleaning.webp"
 ---
 
 If you need professional garment care around Wuse II, contact the Nathans Abuja team directly.
