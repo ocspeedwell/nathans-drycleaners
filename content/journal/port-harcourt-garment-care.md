@@ -1,5 +1,5 @@
 ---
-title: "Professional Garment Care in Port Harcourt"
+title: "Professional Laundry & Dry Cleaning in Port Harcourt"
 description: "Nathans serves customers in Port Harcourt through its GRA Phase 2 branch."
 category: "Nathans Locations & Services"
 image: "/assets/journal/port-harcourt-garment-care.svg"
@@ -11,7 +11,7 @@ For delicate fabrics, suits and household items, explain the garment constructio
 
 ## Serving GRA Phase 2
 
-The Nathans Port Harcourt branch is at 67 Woji Road, GRA Phase 2. Customers can enquire about garment care, pressing and other available services directly with the branch.
+The Nathans Port Harcourt branch is at 67 Woji Road, GRA Phase 2. Customers can enquire about laundry and dry cleaning, pressing and other available services directly with the branch.
 
 ## Special garments need extra detail
 
