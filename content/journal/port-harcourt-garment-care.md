@@ -2,7 +2,7 @@
 title: "Professional Garment Care in Port Harcourt"
 description: "Nathans serves customers in Port Harcourt through its GRA Phase 2 branch."
 category: "Nathans Locations & Services"
-image: "/assets/journal/port-harcourt-garment-care.webp"
+image: "/assets/journal/port-harcourt-garment-care.svg"
 ---
 
 Nathans serves customers in Port Harcourt through its GRA Phase 2 branch.
