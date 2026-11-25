@@ -15,7 +15,7 @@ class JournalBuildTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
 
-    def article(self, name="safe-article.md", title="Garment Care", body="## Helpful advice\n\nAvoid harsh cleaners."):
+    def article(self, name="safe-article.md", title="Fabric Care", body="## Helpful advice\n\nAvoid harsh cleaners."):
         path = self.root / name
         path.write_text("---\ntitle: " + title + "\ndescription: Helpful care information.\ncategory: Professional Dry Cleaning\n---\n\n" + body, encoding="utf-8")
         return path
