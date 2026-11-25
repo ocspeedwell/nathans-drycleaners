@@ -11,7 +11,7 @@ Share garment types and any special treatment needs. The branch can confirm serv
 
 ## Your Wuse II branch
 
-The Nathans Abuja branch is at 10 Lobito Crescent, Wuse II. Customers can contact the branch for garment-care enquiries and confirmation of current services.
+The Nathans Abuja branch is at 10 Lobito Crescent, Wuse II. Customers can contact the branch for fabric care enquiries and confirmation of current services.
 
 ## Explain what you need
 
