@@ -2,7 +2,7 @@
 title: "Professional Laundry & Dry Cleaning in Port Harcourt"
 description: "Nathans serves customers in Port Harcourt through its GRA Phase 2 branch."
 category: "Nathans Locations & Services"
-image: "/assets/journal/port-harcourt-garment-care.svg"
+image: "/assets/journal/7d03c455-ce87-4982-a615-30755eea0fca.png"
 ---
 
 Nathans serves customers in Port Harcourt through its GRA Phase 2 branch.
