@@ -2,7 +2,7 @@
 title: "Laundry Pickup Enquiries in Lagos"
 description: "For customers in Victoria Island, Nathans provides a direct branch contact for garment-care enquiries."
 category: "Nathans Locations & Services"
-image: "/assets/journal/lagos-laundry-enquiries.svg"
+image: "/assets/journal/Eko%20Hotel%20Roundabout%20Cityscape.png"
 ---
 
 For customers in Victoria Island, Nathans provides a direct branch contact for garment-care enquiries.

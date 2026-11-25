@@ -2,7 +2,7 @@
 title: "Caring for Lace and Aso-Oke"
 description: "Nigerian occasion wear deserves fabric-specific care, particularly when beads, metallic threads or layered fabrics are involved."
 category: "Professional Dry Cleaning"
-image: "/assets/journal/lace-aso-oke-care.svg"
+image: "/assets/journal/Luxurious%20Purple%20and%20Gold%20Aso-Oke%20Ensemble.png"
 ---
 
 Nigerian occasion wear deserves fabric-specific care, particularly when beads, metallic threads or layered fabrics are involved.

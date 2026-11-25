@@ -2,7 +2,7 @@
 title: "Wedding Gown Cleaning and Storage"
 description: "Address stains as soon as practical after the celebration, including marks that are not immediately visible."
 category: "Professional Dry Cleaning"
-image: "/assets/journal/wedding-gown-preservation.svg"
+image: "/assets/journal/Lace-Embellished%20Bridal%20Boutique%20Gown.png"
 ---
 
 Address stains as soon as practical after the celebration, including marks that are not immediately visible.
