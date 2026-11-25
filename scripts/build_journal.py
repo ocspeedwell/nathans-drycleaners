@@ -17,7 +17,7 @@ CATEGORIES = {"Fabric Care & Stain Removal", "Professional Dry Cleaning", "Laund
 ALLOWED_TAGS = set(bleach.sanitizer.ALLOWED_TAGS) | {"p", "h2", "h3", "h4", "br", "hr", "img", "blockquote"}
 ALLOWED_ATTRS = {"a": ["href", "title"], "img": ["src", "alt", "title"]}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-IMAGE = re.compile(r"^/assets/journal/[a-zA-Z0-9_./-]+\.(?:png|jpe?g|webp|svg)$")
+IMAGE = re.compile(r"^/assets/journal/[a-zA-Z0-9_%./-]+\.(?:png|jpe?g|webp|svg)$")
 
 def parse(path):
     text = path.read_text(encoding="utf-8")

@@ -2,7 +2,7 @@
 title: "How to Care for Your Agbada Without Damaging Its Embroidery"
 description: "Agbada often combines structured fabric with delicate embroidery. Check the care label, avoid scrubbing decorative threads and have heavily embellished garments assessed before cleaning."
 category: "Professional Dry Cleaning"
-image: "/assets/journal/agbada-care.svg"
+image: "/assets/journal/Elegant%20Nigerian%20Man%20in%20Embroidered%20Agbada.png"
 ---
 
 Agbada often combines structured fabric with delicate embroidery. Check the care label, avoid scrubbing decorative threads and have heavily embellished garments assessed before cleaning.
